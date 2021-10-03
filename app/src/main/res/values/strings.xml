@@ -21,7 +21,7 @@
     <string name="record_visit_button">Registrar Visita</string>
     <string name="send_email_button">Enviar Correo</string>
 
-    <string name="full_name_label">Nombre Completo: %s</string>
+    <string name="full_name_label">Nombre Completo: %s, %s</string>
     <string name="dni_label">DNI: %s</string>
     <string name="email_label">Correo Electrónico: %s</string>
     <string name="address_label">Dirección: %s</string>
