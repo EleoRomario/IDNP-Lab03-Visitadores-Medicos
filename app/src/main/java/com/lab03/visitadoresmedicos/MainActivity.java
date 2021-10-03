@@ -2,13 +2,11 @@ package com.lab03.visitadoresmedicos;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
-import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Button;
 
 import com.lab03.visitadoresmedicos.databinding.ActivityMainBinding;
 import com.lab03.visitadoresmedicos.models.PatientViewModel;
@@ -34,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
      */
     public void goToPatientRegistrationForm() {
         Intent intent = new Intent(this, PatientFormActivity.class);
+        viewModel.registerUser("", "", "", "", "");
+        Log.d(TAG, viewModel.isLastVisitRecorded().getValue().toString());
         startActivity(intent);
     }
 
@@ -43,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
      */
     public void goToVisitForm() {
         Intent intent = new Intent(this, VisitForm.class);
+        viewModel.recordVisit(0.0, 0, 0, 0);
         startActivity(intent);
     }
 
