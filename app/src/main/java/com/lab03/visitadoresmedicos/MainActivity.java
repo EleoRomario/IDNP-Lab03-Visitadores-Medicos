@@ -32,8 +32,6 @@ public class MainActivity extends AppCompatActivity {
      */
     public void goToPatientRegistrationForm() {
         Intent intent = new Intent(this, PatientFormActivity.class);
-        viewModel.registerUser("", "", "", "", "");
-        Log.d(TAG, viewModel.isLastVisitRecorded().getValue().toString());
         startActivity(intent);
     }
 
@@ -43,7 +41,6 @@ public class MainActivity extends AppCompatActivity {
      */
     public void goToVisitForm() {
         Intent intent = new Intent(this, VisitForm.class);
-        viewModel.recordVisit(0.0, 0, 0, 0);
         startActivity(intent);
     }
 
