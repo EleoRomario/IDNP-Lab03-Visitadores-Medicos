@@ -1,3 +1,32 @@
 <resources>
     <string name="app_name">Visitadores Medicos</string>
+    <string name="activity_menu_title">Menú</string>
+    <string name="activity_patient_title">Registro de Paciente</string>
+    <string name="activity_visit_title">Registro de la Visita</string>
+    <string name="first_names">Nombres</string>
+    <string name="last_names">Apellidos</string>
+    <string name="dni">DNI</string>
+    <string name="email">Correo Electrónico</string>
+    <string name="address">Dirección</string>
+    <string name="register">Registrar</string>
+    <string name="weight">Peso</string>
+    <string name="temperature">Temperatura</string>
+    <string name="pressure">Presión</string>
+    <string name="saturation_level">Nivel de Saturación</string>
+    <string name="save">Guardar</string>
+
+    <string name="patient_overview_title">Datos del Paciente</string>
+    <string name="last_visit_title">Último Registro</string>
+    <string name="register_patient_button">Registrar Paciente</string>
+    <string name="record_visit_button">Registrar Visita</string>
+    <string name="send_email_button">Enviar Correo</string>
+
+    <string name="full_name_label">Nombre Completo: %s, %s</string>
+    <string name="dni_label">DNI: %s</string>
+    <string name="email_label">Correo Electrónico: %s</string>
+    <string name="address_label">Dirección: %s</string>
+    <string name="weight_label">Peso: %s kg</string>
+    <string name="temperature_label">Temperatura: %s °C</string>
+    <string name="pressure_label">Presión: %s Pa</string>
+    <string name="saturation_label">Saturación: %s</string>
 </resources>

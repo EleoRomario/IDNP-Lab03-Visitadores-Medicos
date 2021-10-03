@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VisitadoresMedicos">
         <activity
+            android:name=".VisitForm"
+            android:exported="true"
+            android:label="@string/activity_visit_title"/>
+        <activity
+            android:name=".PatientFormActivity"
+            android:label="@string/activity_patient_title"
+            android:exported="true" />
+        <activity
+            android:label="@string/activity_menu_title"
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PatientFormActivity">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/first_names_text_field"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/margin"
+        android:layout_marginTop="@dimen/margin_top_form"
+        android:hint="@string/first_names"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/first_names_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text|textCapWords|textNoSuggestions" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/last_names_text_field"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top_form"
+        android:hint="@string/last_names"
+        app:layout_constraintEnd_toEndOf="@id/first_names_text_field"
+        app:layout_constraintStart_toStartOf="@id/first_names_text_field"
+        app:layout_constraintTop_toBottomOf="@id/first_names_text_field">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/last_names_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text|textCapWords|textNoSuggestions" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/dni_text_field"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top_form"
+        android:hint="@string/dni"
+        app:layout_constraintEnd_toEndOf="@id/last_names_text_field"
+        app:layout_constraintStart_toStartOf="@id/last_names_text_field"
+        app:layout_constraintTop_toBottomOf="@id/last_names_text_field">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/dni_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number|textNoSuggestions" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/email_text_field"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top_form"
+        android:hint="@string/email"
+        app:layout_constraintEnd_toEndOf="@id/dni_text_field"
+        app:layout_constraintStart_toStartOf="@id/dni_text_field"
+        app:layout_constraintTop_toBottomOf="@id/dni_text_field">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/email_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/address_text_field"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_top_form"
+        android:hint="@string/address"
+        app:layout_constraintEnd_toEndOf="@id/email_text_field"
+        app:layout_constraintStart_toStartOf="@id/email_text_field"
+        app:layout_constraintTop_toBottomOf="@id/email_text_field">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/address_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text|textNoSuggestions" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/save_patient_data_button"
+        android:layout_width="@dimen/button_width"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_button_form"
+        android:text="@string/register"
+        app:layout_constraintEnd_toEndOf="@id/address_text_field"
+        app:layout_constraintStart_toStartOf="@id/address_text_field"
+        app:layout_constraintTop_toBottomOf="@id/address_text_field" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

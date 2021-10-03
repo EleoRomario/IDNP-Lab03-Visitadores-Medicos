@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="small_margin">4dp</dimen>
+    <dimen name="margin">8dp</dimen>
+    <dimen name="button_width">192dp</dimen>
+    <dimen name="large_button_width">224dp</dimen>
+    <dimen name="margin_top_form">16dp</dimen>
+    <dimen name="margin_button_form">32dp</dimen>
+</resources>

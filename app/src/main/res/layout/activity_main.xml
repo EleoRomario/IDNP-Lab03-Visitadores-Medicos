@@ -1,18 +1,185 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <variable
+            name="viewModel"
+            type="com.lab03.visitadoresmedicos.models.PatientViewModel" />
+
+        <variable
+            name="activity"
+            type="com.lab03.visitadoresmedicos.MainActivity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/title"
+            style="?textAppearanceHeadline6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin"
+            android:layout_marginTop="@dimen/margin_top_form"
+            android:text="@string/patient_overview_title"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/not_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_form"
+            android:text="No ha registrado ningún usuario"
+            app:layout_constraintStart_toStartOf="@id/title"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            app:visibility="@{!viewModel.isUserRegistered}"
+            tools:visibility="gone" />
+
+        <TextView
+            android:id="@+id/full_name_label"
+            style="?textAppearanceBody1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin"
+            android:text="@{@string/full_name_label(viewModel.lastName, viewModel.firstName)}"
+            app:layout_constraintStart_toStartOf="@id/title"
+            app:layout_constraintTop_toBottomOf="@id/title" />
+
+        <TextView
+            android:id="@+id/dni_label"
+            style="?textAppearanceBody1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin"
+            android:text="@{@string/dni_label(viewModel.dni)}"
+            app:layout_constraintStart_toStartOf="@id/title"
+            app:layout_constraintTop_toBottomOf="@id/full_name_label" />
+
+        <TextView
+            android:id="@+id/email_label"
+            style="?textAppearanceBody1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin"
+            android:text="@{@string/email_label(viewModel.email)}"
+            app:layout_constraintStart_toStartOf="@id/title"
+            app:layout_constraintTop_toBottomOf="@id/dni_label" />
+
+        <TextView
+            android:id="@+id/address_label"
+            style="?textAppearanceBody1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin"
+            android:text="@{@string/address_label(viewModel.address)}"
+            app:layout_constraintStart_toStartOf="@id/title"
+            app:layout_constraintTop_toBottomOf="@id/email_label" />
+
+        <TextView
+            android:id="@+id/visit_data_title"
+            style="?textAppearanceSubtitle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_form"
+            android:text="@string/last_visit_title"
+            app:layout_constraintStart_toStartOf="@id/address_label"
+            app:layout_constraintTop_toBottomOf="@id/user_information" />
+
+        <TextView
+            android:id="@+id/weight_label"
+            style="?textAppearanceBody2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin"
+            android:text="@{@string/weight_label(viewModel.weight)}"
+            app:layout_constraintStart_toStartOf="@id/visit_data_title"
+            app:layout_constraintTop_toBottomOf="@id/visit_data_title" />
+
+        <TextView
+            android:id="@+id/temperature_label"
+            style="?textAppearanceBody2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin"
+            android:text="@{@string/temperature_label(viewModel.temperature)}"
+            app:layout_constraintStart_toStartOf="@id/weight_label"
+            app:layout_constraintTop_toBottomOf="@id/weight_label" />
+
+        <TextView
+            android:id="@+id/pressure_label"
+            style="?textAppearanceBody2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin"
+            android:text="@{@string/pressure_label(viewModel.pressure)}"
+            app:layout_constraintStart_toStartOf="@id/temperature_label"
+            app:layout_constraintTop_toBottomOf="@id/temperature_label" />
+
+        <TextView
+            android:id="@+id/saturation_label"
+            style="?textAppearanceBody2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin"
+            android:text="@{@string/saturation_label(viewModel.pressure)}"
+            app:layout_constraintStart_toStartOf="@id/pressure_label"
+            app:layout_constraintTop_toBottomOf="@id/pressure_label" />
+
+
+        <Button
+            android:id="@+id/go_to_visit_form_button"
+            android:layout_width="@dimen/large_button_width"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_button_form"
+            android:onClick="@{()->activity.goToVisitForm()}"
+            android:text="@string/record_visit_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/saturation_label" />
+
+        <Button
+            android:id="@+id/go_to_patient_form_button"
+            style="?materialButtonOutlinedStyle"
+            android:layout_width="@dimen/large_button_width"
+            android:layout_height="wrap_content"
+            android:onClick="@{()->activity.goToPatientRegistrationForm()}"
+            android:text="@string/register_patient_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/go_to_visit_form_button" />
+
+        <Button
+            android:id="@+id/send_email_button"
+            style="?materialButtonOutlinedStyle"
+            android:layout_width="@dimen/large_button_width"
+            android:layout_height="wrap_content"
+            android:onClick="@{()->activity.sendEmail()}"
+            android:text="@string/send_email_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/go_to_patient_form_button" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="full_name_label,dni_label,email_label,address_label"
+            app:visibility="@{viewModel.isUserRegistered}" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/user_information"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="address_label, not_user"
+            tools:layout_editor_absoluteY="150dp" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

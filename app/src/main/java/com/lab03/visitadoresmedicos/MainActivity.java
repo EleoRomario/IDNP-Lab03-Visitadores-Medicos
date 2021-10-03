@@ -1,14 +1,56 @@
 package com.lab03.visitadoresmedicos;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.Button;
+
+import com.lab03.visitadoresmedicos.databinding.ActivityMainBinding;
+import com.lab03.visitadoresmedicos.models.PatientViewModel;
 
 public class MainActivity extends AppCompatActivity {
+    private PatientViewModel viewModel;
+    private final String TAG = "MainActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
+        viewModel = new ViewModelProvider(this).get(PatientViewModel.class);
+
+        binding.setLifecycleOwner(this);
+        binding.setActivity(this);
+        binding.setViewModel(viewModel);
+    }
+
+    /**
+     * TODO: replace logic to use startActivityForResult
+     * use viewModel.registerPatient
+     */
+    public void goToPatientRegistrationForm() {
+        Intent intent = new Intent(this, PatientFormActivity.class);
+        startActivity(intent);
+    }
+
+    /**
+     * TODO: replace logic to use startActivityForResult
+     * use viewModel.recordVisit
+     */
+    public void goToVisitForm() {
+        Intent intent = new Intent(this, VisitForm.class);
+        startActivity(intent);
+    }
+
+    /**
+     * TODO: add logic to send the patient's data via email
+     * use viewModels getters to access the patient's information
+     */
+    public void sendEmail(){
+        Log.d(TAG, "Sending email");
     }
 }
