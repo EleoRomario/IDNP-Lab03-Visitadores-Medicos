@@ -26,23 +26,30 @@ public class MainActivity extends AppCompatActivity {
         binding.setLifecycleOwner(this);
         binding.setActivity(this);
         binding.setViewModel(viewModel);
-
-        Button goToPatientButton = findViewById(R.id.go_to_patient_form_button);
-        goToPatientButton.setOnClickListener((view) -> goToPatientRegistrationForm());
-        Button goToVisitFormButton = findViewById(R.id.go_to_visit_form_button);
-        goToVisitFormButton.setOnClickListener((view) -> goToVisitForm());
     }
 
+    /**
+     * TODO: replace logic to use startActivityForResult
+     * use viewModel.registerPatient
+     */
     public void goToPatientRegistrationForm() {
         Intent intent = new Intent(this, PatientFormActivity.class);
         startActivity(intent);
     }
 
+    /**
+     * TODO: replace logic to use startActivityForResult
+     * use viewModel.recordVisit
+     */
     public void goToVisitForm() {
         Intent intent = new Intent(this, VisitForm.class);
         startActivity(intent);
     }
 
+    /**
+     * TODO: add logic to send the patient's data via email
+     * use viewModels getters to access the patient's information
+     */
     public void sendEmail(){
         Log.d(TAG, "Sending email");
     }
