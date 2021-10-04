@@ -2,13 +2,11 @@ package com.lab03.visitadoresmedicos;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
-import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Button;
 
 import com.lab03.visitadoresmedicos.databinding.ActivityMainBinding;
 import com.lab03.visitadoresmedicos.models.PatientViewModel;

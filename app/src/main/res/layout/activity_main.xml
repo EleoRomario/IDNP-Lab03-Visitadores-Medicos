@@ -38,7 +38,7 @@
             android:text="No ha registrado ningún usuario"
             app:layout_constraintStart_toStartOf="@id/title"
             app:layout_constraintTop_toBottomOf="@id/title"
-            app:visibility="@{!viewModel.isUserRegistered}"
+            visibility="@{!viewModel.isUserRegistered}"
             tools:visibility="gone" />
 
         <TextView
@@ -131,6 +131,15 @@
             app:layout_constraintStart_toStartOf="@id/pressure_label"
             app:layout_constraintTop_toBottomOf="@id/pressure_label" />
 
+        <TextView
+            android:id="@+id/visit_not_found"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_top_form"
+            android:text="No ha registrado ningún dato de visita"
+            app:layout_constraintStart_toStartOf="@id/visit_data_title"
+            app:layout_constraintTop_toBottomOf="@id/visit_data_title"
+            visibility="@{!viewModel.isLastVisitRecorded}" />
 
         <Button
             android:id="@+id/go_to_visit_form_button"
@@ -139,9 +148,10 @@
             android:layout_marginTop="@dimen/margin_button_form"
             android:onClick="@{()->activity.goToVisitForm()}"
             android:text="@string/record_visit_button"
+            android:enabled="@{viewModel.isUserRegistered}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/saturation_label" />
+            app:layout_constraintTop_toBottomOf="@id/visit_information_barrier" />
 
         <Button
             android:id="@+id/go_to_patient_form_button"
@@ -170,7 +180,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:constraint_referenced_ids="full_name_label,dni_label,email_label,address_label"
-            app:visibility="@{viewModel.isUserRegistered}" />
+            visibility="@{viewModel.isUserRegistered}" />
 
         <androidx.constraintlayout.widget.Barrier
             android:id="@+id/user_information"
@@ -179,6 +189,27 @@
             app:barrierDirection="bottom"
             app:constraint_referenced_ids="address_label, not_user"
             tools:layout_editor_absoluteY="150dp" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="weight_label,temperature_label,pressure_label,saturation_label" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/visit_information_group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:constraint_referenced_ids="weight_label,temperature_label,pressure_label,saturation_label"
+            visibility="@{viewModel.isLastVisitRecorded}" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/visit_information_barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="saturation_label, visit_not_found"
+            tools:layout_editor_absoluteX="8dp" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

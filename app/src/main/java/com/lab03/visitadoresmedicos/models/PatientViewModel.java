@@ -11,7 +11,7 @@ public class PatientViewModel extends ViewModel {
     private MutableLiveData<Boolean> isLastVisitRecorded;
 
     public LiveData<Boolean> isLastVisitRecorded() {
-        return isUserRegistered;
+        return isLastVisitRecorded;
     }
 
     public LiveData<Boolean> getIsUserRegistered() {
@@ -84,6 +84,7 @@ public class PatientViewModel extends ViewModel {
         firstName = new MutableLiveData<>("");
         lastName = new MutableLiveData<>("");
         dni = new MutableLiveData<>("");
+        email = new MutableLiveData<>("");
         address = new MutableLiveData<>("");
 
         weight = new MutableLiveData<>(0.0);
