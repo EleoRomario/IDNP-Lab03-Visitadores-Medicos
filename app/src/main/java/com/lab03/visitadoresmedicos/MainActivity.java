@@ -40,8 +40,11 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onActivityResult(ActivityResult result) {
                     String firstName = result.getData().getStringExtra("firstName");
-                    viewModel.registerUser(firstName,"","","","");
-                    Log.d(TAG, "mensajee" + firstName);
+                    String lastName = result.getData().getStringExtra("lastName");
+                    String dni = result.getData().getStringExtra("dni");
+                    String email = result.getData().getStringExtra("email");
+                    String address = result.getData().getStringExtra("address");
+                    viewModel.registerUser(firstName,lastName,dni,email,address);
                 }
     });
 

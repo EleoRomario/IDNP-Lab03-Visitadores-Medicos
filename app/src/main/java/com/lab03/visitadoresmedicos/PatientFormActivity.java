@@ -29,18 +29,22 @@ public class PatientFormActivity extends AppCompatActivity {
         email =(TextInputEditText) findViewById(R.id.email_edit_text);
         address = (TextInputEditText) findViewById(R.id.address_edit_text);
 
+
+
+    }
+    public void registerOnClick(View v){
         sfName = firstName.getText().toString();
         slName = lastName.getText().toString();
         sdni = dni.getText().toString();
         semail= email.getText().toString();
         saddress= address.getText().toString();
 
-    }
-    public void registerOnClick(View v){
-
         Intent i = new Intent(this, MainActivity.class);
-        i.putExtra("firstName", firstName.getText()).toString();
-        Log.d(TAG, "messssssaje" + firstName.getText().toString());
+        i.putExtra("firstName", sfName);
+        i.putExtra("lastName", slName);
+        i.putExtra("dni", sdni);
+        i.putExtra("email", semail);
+        i.putExtra("address", saddress);
         setResult(Activity.RESULT_OK, i);
         finish();
     }
