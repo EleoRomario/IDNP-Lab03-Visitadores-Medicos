@@ -13,6 +13,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.lab03.visitadoresmedicos.databinding.ActivityMainBinding;
 import com.lab03.visitadoresmedicos.models.PatientViewModel;
@@ -67,10 +68,21 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    /**
-     * TODO: add logic to send the patient's data via email
-     * use viewModels getters to access the patient's information
-     */
     public void sendEmail(){
+        Intent email = new Intent(Intent.ACTION_SEND);
+        email.setType("message/rfc822");
+        email.putExtra(Intent.EXTRA_EMAIL,new String []{viewModel.getEmail().getValue()});
+        email.putExtra(Intent.EXTRA_SUBJECT, "Datos Personales");
+        String cuerpo = "Nombre: "+viewModel.getFirstName().getValue()+"\n"+
+                "Su peso es de: "+viewModel.getWeight().getValue()+"\n"+
+                "Su temperatura es de: "+viewModel.getTemperature().getValue()+"\n"+
+                "Su presion es de: "+viewModel.getPressure().getValue()+"\n"+
+                "Su saturacion es de: "+viewModel.getSaturation().getValue();
+        email.putExtra(Intent.EXTRA_TEXT,cuerpo);
+        try{
+            startActivity(Intent.createChooser(email,"Enviar email"));
+        }catch(android.content.ActivityNotFoundException ex){
+            Toast.makeText(getApplicationContext(),"No hay aplicacion de correo", Toast.LENGTH_SHORT).show();
+        }
     }
 }
