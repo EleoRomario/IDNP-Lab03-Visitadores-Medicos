@@ -49,6 +49,51 @@ public class MainActivity extends AppCompatActivity {
                 }
     });
 
+    private ActivityResultLauncher<Intent> mGetVisit = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
+            new ActivityResultCallback<ActivityResult>() {
+                @Override
+                public void onActivityResult(ActivityResult result) {
+
+                    String SWeight="";
+                    String STemperature="";
+                    String SPressure="";
+                    String SSaturation="";
+                    double weight=0;
+                    int temperature=0;
+                    int pressure=0;
+                    int saturation=0;
+                    try {
+                        SWeight=result.getData().getStringExtra("weight");
+                        weight = Double.parseDouble(SWeight);
+                    }
+                    catch (Exception e){
+                        Log.i("El usuario no ingreso todos los parametros", e.toString());
+                    }
+                    try {
+                        STemperature=result.getData().getStringExtra("temperature");
+                        temperature = Integer.parseInt(STemperature);
+                    }
+                    catch (Exception e){
+                        Log.i("El usuario no ingreso todos los parametros", e.toString());
+                    }
+                    try {
+                        SPressure=result.getData().getStringExtra("pressure");
+                        pressure = Integer.parseInt(SPressure);
+                    }
+                    catch (Exception e){
+                        Log.i("El usuario no ingreso todos los parametros", e.toString());
+                    }
+                    try {
+                        SSaturation=result.getData().getStringExtra("saturation");
+                        saturation = Integer.parseInt(SSaturation);
+                    }
+                    catch (Exception e){
+                        Log.i("El usuario no ingreso todos los parametros", e.toString());
+                    }
+
+                    viewModel.recordVisit(weight,temperature,pressure,saturation);
+                }
+            });
 
     /**
      * TODO: replace logic to use startActivityForResult
@@ -65,7 +110,9 @@ public class MainActivity extends AppCompatActivity {
      */
     public void goToVisitForm() {
         Intent intent = new Intent(this, VisitForm.class);
-        startActivity(intent);
+
+        intent.putExtra("dni", viewModel.getDni().getValue().toString());
+        mGetVisit.launch(intent);
     }
 
     public void sendEmail(){
