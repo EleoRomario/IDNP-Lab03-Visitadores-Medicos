@@ -1,4 +1,4 @@
-package com.lab03.visitadoresmedicos.models;
+package com.lab03.visitadoresmedicos.viewmodels;
 
 import android.view.View;
 

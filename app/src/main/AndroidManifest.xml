@@ -10,16 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VisitadoresMedicos">
         <activity
-            android:name=".VisitForm"
+            android:name=".views.VisitFormActivity"
             android:exported="true"
             android:label="@string/activity_visit_title"/>
         <activity
-            android:name=".PatientFormActivity"
+            android:name=".views.PatientFormActivity"
             android:label="@string/activity_patient_title"
             android:exported="true" />
         <activity
             android:label="@string/activity_menu_title"
-            android:name=".MainActivity"
+            android:name=".views.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
