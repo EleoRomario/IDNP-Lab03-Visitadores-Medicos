@@ -11,6 +11,7 @@ import android.os.Bundle;
 import com.google.android.material.textfield.TextInputEditText;
 import com.lab03.visitadoresmedicos.R;
 import com.lab03.visitadoresmedicos.databinding.ActivityPatientFormBinding;
+import com.lab03.visitadoresmedicos.viewmodels.PatientActivityViewModel;
 
 public class PatientFormActivity extends AppCompatActivity {
     private final String TAG = "PatientActivity";

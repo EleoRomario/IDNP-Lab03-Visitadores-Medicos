@@ -49,27 +49,27 @@ public class MainActivityViewModel extends ViewModel {
         return address;
     }
 
-    private MutableLiveData<Double> weight;
+    private MutableLiveData<String> weight;
 
-    public LiveData<Double> getWeight() {
+    public LiveData<String> getWeight() {
         return weight;
     }
 
-    private MutableLiveData<Integer> temperature;
+    private MutableLiveData<String> temperature;
 
-    public LiveData<Integer> getTemperature() {
+    public LiveData<String> getTemperature() {
         return temperature;
     }
 
-    private MutableLiveData<Integer> pressure;
+    private MutableLiveData<String> pressure;
 
-    public LiveData<Integer> getPressure() {
+    public LiveData<String> getPressure() {
         return pressure;
     }
 
-    private MutableLiveData<Integer> saturation;
+    private MutableLiveData<String> saturation;
 
-    public LiveData<Integer> getSaturation() {
+    public LiveData<String> getSaturation() {
         return saturation;
     }
 
@@ -87,10 +87,10 @@ public class MainActivityViewModel extends ViewModel {
         email = new MutableLiveData<>("");
         address = new MutableLiveData<>("");
 
-        weight = new MutableLiveData<>(0.0);
-        temperature = new MutableLiveData<>(0);
-        pressure = new MutableLiveData<>(0);
-        saturation = new MutableLiveData<>(0);
+        weight = new MutableLiveData<>("");
+        temperature = new MutableLiveData<>("");
+        pressure = new MutableLiveData<>("");
+        saturation = new MutableLiveData<>("");
     }
 
     public void registerUser(String firstName, String lastName, String dni, String email, String address) {
@@ -104,7 +104,7 @@ public class MainActivityViewModel extends ViewModel {
         this.isLastVisitRecorded.setValue(false);
     }
 
-    public void recordVisit(double weight, int temperature, int pressure, int saturation) {
+    public void recordVisit(String weight, String temperature, String pressure, String saturation) {
         if (isUserRegistered.getValue()) {
             this.weight.setValue(weight);
             this.temperature.setValue(temperature);
