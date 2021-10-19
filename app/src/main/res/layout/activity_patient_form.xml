@@ -7,9 +7,6 @@
         <variable
             name="patientFormActivity"
             type="com.lab03.visitadoresmedicos.views.PatientFormActivity" />
-        <variable
-            name="viewModelPatient"
-            type="com.lab03.visitadoresmedicos.viewmodels.PatientActivityViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -32,8 +29,7 @@
                 android:id="@+id/first_names_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text|textCapWords|textNoSuggestions"
-                android:text="@{viewModelPatient.firstName}"/>
+                android:inputType="text|textCapWords|textNoSuggestions" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -50,8 +46,7 @@
                 android:id="@+id/last_names_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text|textCapWords|textNoSuggestions"
-                android:text="@{viewModelPatient.lastName}"/>
+                android:inputType="text|textCapWords|textNoSuggestions" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -68,8 +63,7 @@
                 android:id="@+id/dni_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number|textNoSuggestions"
-                android:text="@{viewModelPatient.DNI}"/>
+                android:inputType="number|textNoSuggestions" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -86,8 +80,7 @@
                 android:id="@+id/email_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress"
-                android:text="@{viewModelPatient.email}"/>
+                android:inputType="textEmailAddress" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -104,8 +97,7 @@
                 android:id="@+id/address_edit_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text|textNoSuggestions"
-                android:text="@{viewModelPatient.patientAddress}"/>
+                android:inputType="text|textNoSuggestions" />
         </com.google.android.material.textfield.TextInputLayout>
 
         <Button

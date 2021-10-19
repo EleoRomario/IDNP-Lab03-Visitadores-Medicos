@@ -2,22 +2,17 @@ package com.lab03.visitadoresmedicos.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
-import androidx.lifecycle.ViewModelProvider;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.lab03.visitadoresmedicos.R;
 import com.lab03.visitadoresmedicos.databinding.ActivityPatientFormBinding;
-import com.lab03.visitadoresmedicos.viewmodels.MainActivityViewModel;
-import com.lab03.visitadoresmedicos.viewmodels.PatientActivityViewModel;
 
 public class PatientFormActivity extends AppCompatActivity {
     private final String TAG = "PatientActivity";
-    private PatientActivityViewModel viewModel;
 
     TextInputEditText firstName, lastName, dni, email, address;
     String sfName, slName, sdni, semail, saddress;
@@ -26,12 +21,7 @@ public class PatientFormActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityPatientFormBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_patient_form);
-        //binding.setPatientFormActivity(this);
-        viewModel = new ViewModelProvider(this).get(PatientActivityViewModel.class);
-
-        binding.setLifecycleOwner(this);
         binding.setPatientFormActivity(this);
-        binding.setViewModelPatient(viewModel);
 
         firstName = (TextInputEditText) findViewById(R.id.first_names_edit_text);
         lastName = (TextInputEditText) findViewById(R.id.last_names_edit_text);
