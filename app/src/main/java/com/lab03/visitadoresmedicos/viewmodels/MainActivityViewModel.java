@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel;
 
 import java.util.List;
 
-public class PatientViewModel extends ViewModel {
+public class MainActivityViewModel extends ViewModel {
     private MutableLiveData<Boolean> isUserRegistered;
     private MutableLiveData<Boolean> isLastVisitRecorded;
 
@@ -73,7 +73,7 @@ public class PatientViewModel extends ViewModel {
         return saturation;
     }
 
-    public PatientViewModel() {
+    public MainActivityViewModel() {
         reset();
     }
 

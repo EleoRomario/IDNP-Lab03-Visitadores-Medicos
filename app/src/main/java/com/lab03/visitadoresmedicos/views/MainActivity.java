@@ -15,17 +15,17 @@ import android.widget.Toast;
 
 import com.lab03.visitadoresmedicos.R;
 import com.lab03.visitadoresmedicos.databinding.ActivityMainBinding;
-import com.lab03.visitadoresmedicos.viewmodels.PatientViewModel;
+import com.lab03.visitadoresmedicos.viewmodels.MainActivityViewModel;
 
 public class MainActivity extends AppCompatActivity {
     private final String TAG = "Main";
-    private PatientViewModel viewModel;
+    private MainActivityViewModel viewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         ActivityMainBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        viewModel = new ViewModelProvider(this).get(PatientViewModel.class);
+        viewModel = new ViewModelProvider(this).get(MainActivityViewModel.class);
 
         binding.setLifecycleOwner(this);
         binding.setActivity(this);

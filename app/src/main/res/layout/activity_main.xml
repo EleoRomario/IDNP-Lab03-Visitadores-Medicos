@@ -7,7 +7,7 @@
 
         <variable
             name="viewModel"
-            type="com.lab03.visitadoresmedicos.viewmodels.PatientViewModel" />
+            type="com.lab03.visitadoresmedicos.viewmodels.MainActivityViewModel" />
 
         <variable
             name="activity"
