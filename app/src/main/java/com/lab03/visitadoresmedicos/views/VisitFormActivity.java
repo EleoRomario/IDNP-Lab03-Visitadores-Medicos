@@ -1,6 +1,7 @@
-package com.lab03.visitadoresmedicos;
+package com.lab03.visitadoresmedicos.views;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.databinding.DataBindingUtil;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,15 +9,18 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.lab03.visitadoresmedicos.R;
+import com.lab03.visitadoresmedicos.databinding.ActivityVisitFormBinding;
 
-public class VisitForm extends AppCompatActivity {
+public class VisitFormActivity extends AppCompatActivity {
 
     TextInputEditText dni, weight, temperature, pressure, saturation;
     String sfDni, slWeight, sdTemparature, semPressure,saSaturation;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_visit_form);
+        ActivityVisitFormBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_visit_form);
+        binding.setVisitFormActivity(this);
 
         dni=(TextInputEditText) findViewById(R.id.dni_edit_text);
         dni.setText(getIntent().getStringExtra("dni"));
@@ -26,7 +30,7 @@ public class VisitForm extends AppCompatActivity {
         saturation=(TextInputEditText) findViewById(R.id.saturation_edit_text);
     }
 
-    public void SaveVisitOnClick(View v){
+    public void saveVisit(){
         sfDni = dni.getText().toString();
         slWeight = weight.getText().toString();
         sdTemparature = temperature.getText().toString();
