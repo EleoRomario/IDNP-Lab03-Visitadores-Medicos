@@ -14,6 +14,10 @@
             type="com.lab03.visitadoresmedicos.views.MainActivity" />
     </data>
 
+    <!--
+
+
+    -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
