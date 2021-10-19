@@ -7,17 +7,17 @@
 
         <variable
             name="viewModel"
-            type="com.lab03.visitadoresmedicos.models.PatientViewModel" />
+            type="com.lab03.visitadoresmedicos.viewmodels.PatientViewModel" />
 
         <variable
             name="activity"
-            type="com.lab03.visitadoresmedicos.MainActivity" />
+            type="com.lab03.visitadoresmedicos.views.MainActivity" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        tools:context=".views.MainActivity">
 
         <TextView
             android:id="@+id/title"

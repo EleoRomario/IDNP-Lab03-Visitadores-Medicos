@@ -1,43 +1,41 @@
-package com.lab03.visitadoresmedicos;
+package com.lab03.visitadoresmedicos.views;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import com.lab03.visitadoresmedicos.models.PatientViewModel;
+import androidx.databinding.DataBindingUtil;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.View;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.lab03.visitadoresmedicos.R;
+import com.lab03.visitadoresmedicos.databinding.ActivityPatientFormBinding;
 
 public class PatientFormActivity extends AppCompatActivity {
     private final String TAG = "PatientActivity";
 
     TextInputEditText firstName, lastName, dni, email, address;
-    String sfName, slName, sdni, semail,saddress;
-    public static final  int REQUEST_CODE=10;
+    String sfName, slName, sdni, semail, saddress;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_patient_form);
+        ActivityPatientFormBinding binding = DataBindingUtil.setContentView(this, R.layout.activity_patient_form);
+        binding.setPatientFormActivity(this);
 
-        firstName =(TextInputEditText) findViewById(R.id.first_names_edit_text);
+        firstName = (TextInputEditText) findViewById(R.id.first_names_edit_text);
         lastName = (TextInputEditText) findViewById(R.id.last_names_edit_text);
         dni = (TextInputEditText) findViewById(R.id.dni_edit_text);
-        email =(TextInputEditText) findViewById(R.id.email_edit_text);
+        email = (TextInputEditText) findViewById(R.id.email_edit_text);
         address = (TextInputEditText) findViewById(R.id.address_edit_text);
-
-
-
     }
-    public void registerOnClick(View v){
+
+    public void registerUser() {
         sfName = firstName.getText().toString();
         slName = lastName.getText().toString();
         sdni = dni.getText().toString();
-        semail= email.getText().toString();
-        saddress= address.getText().toString();
+        semail = email.getText().toString();
+        saddress = address.getText().toString();
 
         Intent i = new Intent(this, MainActivity.class);
         i.putExtra("firstName", sfName);
@@ -48,6 +46,6 @@ public class PatientFormActivity extends AppCompatActivity {
         setResult(Activity.RESULT_OK, i);
         finish();
     }
-   //finish
+    //finish
 
 }
