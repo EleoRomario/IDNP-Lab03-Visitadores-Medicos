@@ -2,6 +2,7 @@ package com.lab03.visitadoresmedicos.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -13,6 +14,7 @@ import com.lab03.visitadoresmedicos.databinding.ActivityPatientFormBinding;
 
 public class PatientFormActivity extends AppCompatActivity {
     private final String TAG = "PatientActivity";
+    private PatientActivityViewModel viewModel;
 
     TextInputEditText firstName, lastName, dni, email, address;
     String sfName, slName, sdni, semail, saddress;
