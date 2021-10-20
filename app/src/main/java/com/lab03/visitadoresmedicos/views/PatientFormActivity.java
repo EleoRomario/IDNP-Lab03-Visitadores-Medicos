@@ -62,7 +62,6 @@ public class PatientFormActivity extends AppCompatActivity {
         }else{
             dnilayout.setError("Número de digitos inválido");
         }
-
         return cont;
     }
 
