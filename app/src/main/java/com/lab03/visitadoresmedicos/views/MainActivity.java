@@ -54,36 +54,28 @@ public class MainActivity extends AppCompatActivity {
                     String STemperature = "";
                     String SPressure = "";
                     String SSaturation = "";
-                    double weight = 0;
-                    int temperature = 0;
-                    int pressure = 0;
-                    int saturation = 0;
                     try {
                         SWeight = result.getData().getStringExtra("weight");
-                        weight = Double.parseDouble(SWeight);
                     } catch (Exception e) {
                         Log.i("El usuario no ingreso todos los parametros", e.toString());
                     }
                     try {
                         STemperature = result.getData().getStringExtra("temperature");
-                        temperature = Integer.parseInt(STemperature);
                     } catch (Exception e) {
                         Log.i("El usuario no ingreso todos los parametros", e.toString());
                     }
                     try {
                         SPressure = result.getData().getStringExtra("pressure");
-                        pressure = Integer.parseInt(SPressure);
                     } catch (Exception e) {
                         Log.i("El usuario no ingreso todos los parametros", e.toString());
                     }
                     try {
                         SSaturation = result.getData().getStringExtra("saturation");
-                        saturation = Integer.parseInt(SSaturation);
                     } catch (Exception e) {
                         Log.i("El usuario no ingreso todos los parametros", e.toString());
                     }
 
-                    viewModel.recordVisit(weight, temperature, pressure, saturation);
+                    viewModel.recordVisit(SWeight, STemperature, SPressure, SSaturation);
                 }
             });
 

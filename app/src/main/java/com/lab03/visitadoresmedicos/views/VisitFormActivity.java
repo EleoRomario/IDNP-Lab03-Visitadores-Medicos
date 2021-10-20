@@ -2,19 +2,23 @@ package com.lab03.visitadoresmedicos.views;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.databinding.DataBindingUtil;
-
+import androidx.lifecycle.ViewModelProvider;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+
 import com.google.android.material.textfield.TextInputEditText;
 import com.lab03.visitadoresmedicos.R;
 import com.lab03.visitadoresmedicos.databinding.ActivityVisitFormBinding;
+import com.lab03.visitadoresmedicos.viewmodels.VisitActivityViewModel2;
 
-public class VisitFormActivity extends AppCompatActivity {
+public class VisitFormActivity extends AppCompatActivity{
+    private final String TAG = "VisitActivity";
+    private VisitActivityViewModel2 viewModel;
 
-    TextInputEditText dni, weight, temperature, pressure, saturation;
+  TextInputEditText dni, weight, temperature, pressure, saturation;
     String sfDni, slWeight, sdTemparature, semPressure,saSaturation;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

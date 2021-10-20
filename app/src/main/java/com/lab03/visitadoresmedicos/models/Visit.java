@@ -5,10 +5,10 @@ import com.lab03.visitadoresmedicos.R;
 
 public class Visit {
     private String dni;
-    private double Weight;
-    private int temperature;
-    private int pressure;
-    private int saturation;
+    private String Weight;
+    private String temperature;
+    private String pressure;
+    private String saturation;
 
     public String getDni() {
         return dni;
@@ -18,35 +18,35 @@ public class Visit {
         this.dni = dni;
     }
 
-    public double getWeight() {
+    public String getWeight() {
         return Weight;
     }
 
-    public void setWeight(double weight) {
+    public void setWeight(String weight) {
         Weight = weight;
     }
 
-    public int getTemperature() {
+    public String getTemperature() {
         return temperature;
     }
 
-    public void setTemperature(int temperature) {
+    public void setTemperature(String temperature) {
         this.temperature = temperature;
     }
 
-    public int getPressure() {
+    public String getPressure() {
         return pressure;
     }
 
-    public void setPressure(int pressure) {
+    public void setPressure(String pressure) {
         this.pressure = pressure;
     }
 
-    public int getSaturation() {
+    public String getSaturation() {
         return saturation;
     }
 
-    public void setSaturation(int saturation) {
+    public void setSaturation(String saturation) {
         this.saturation = saturation;
     }
 }
